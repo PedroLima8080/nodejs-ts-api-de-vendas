@@ -10,6 +10,13 @@ class ProductRepository extends Repository<Product> {
             },
         });
     }
+    public async findById(id: number): Promise<Product | undefined> {
+        return await this.findOne({
+            where: {
+                id,
+            },
+        });
+    }
 }
 
 export default ProductRepository;
